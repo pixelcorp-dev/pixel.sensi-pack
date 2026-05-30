@@ -3,30 +3,25 @@ const dot = document.querySelector('.custom-cursor-dot');
 const outline = document.querySelector('.custom-cursor-outline');
 
 window.addEventListener('mousemove', (e) => {
-    // Precise instantaneous dot positioning
     dot.style.left = e.clientX + 'px';
     dot.style.top = e.clientY + 'px';
     
-    // Smooth frame trailing green aura ring
     outline.animate({
         left: `${e.clientX}px`,
         top: `${e.clientY}px`
     }, { duration: 240, fill: "forwards" });
 });
 
-// Cursor Interactions for Custom Brand/Accent States
+// Cursor Interactions for Custom UI Targets
 document.querySelectorAll('.premium-btn, .premium-card, .discord-btn').forEach(item => {
     item.addEventListener('mouseenter', () => {
         outline.style.width = '45px';
         outline.style.height = '45px';
         
-        // Change trailing color ring dependent on selected class element
         if (item.classList.contains('discord-btn')) {
             outline.style.borderColor = '#5865F2';
-        } else if (item.classList.contains('aura-btn') || item.querySelector('.bright-green-theme')) {
-            outline.style.borderColor = '#39ff14';
         } else {
-            outline.style.borderColor = '#00a030';
+            outline.style.borderColor = '#39ff14';
         }
     });
     item.addEventListener('mouseleave', () => {
@@ -54,7 +49,7 @@ class AuraParticle {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 0.3;
-        this.speedY = -Math.random() * 0.3 - 0.1; // Elegant upward drifting energy aura
+        this.speedY = -Math.random() * 0.3 - 0.1; // Smooth upwards glowing matrix movement
         this.alpha = Math.random() * 0.3 + 0.1;
     }
     update() {
@@ -74,7 +69,7 @@ class AuraParticle {
     }
 }
 
-for(let i=0; i < 45; i++) { particles.push(new AuraParticle()); }
+for(let i=0; i < 40; i++) { particles.push(new AuraParticle()); }
 
 function renderLoop() {
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -83,36 +78,18 @@ function renderLoop() {
 }
 renderLoop();
 
-// --- Tactical Gaming Terminal Diagnostic Feeds ---
-const viewport = document.getElementById('terminal-output');
+// --- Sensi Download Visual Logs System ---
+const feed = document.getElementById('terminal-output');
 
-function runLogStream(messages) {
-    viewport.innerHTML = "";
-    messages.forEach((msg, idx) => {
-        setTimeout(() => {
-            const row = document.createElement('div');
-            row.style.marginBottom = '6px';
-            row.innerHTML = `<span style="color:#39ff14;">&raquo;</span> ${msg}`;
-            viewport.appendChild(row);
-            viewport.scrollTop = viewport.scrollHeight;
-        }, idx * 350);
-    });
-}
+function runSensiDownload() {
+    feed.innerHTML = "PRE-PROCESSING: Locating master Registry payload configuration...";
+    feed.style.color = "#39ff14";
+    
+    setTimeout(() => {
+        feed.innerHTML = "INJECTING CONSTANTS: Mapping input parameters for mouse vectors...";
+    }, 450);
 
-function runDebloater() {
-    runLogStream([
-        "TERMINATING NON-ESSENTIAL EMULATOR THREAD HANDLES...",
-        "PURGING WINDOWS MOUSE INTERPOLATION BUFFER STRINGS...",
-        "LOCKING RAW PROCESSING HEADSPACE FOR BLUESTACKS 5 EXECUTABLES...",
-        "STAGING TERMINAL ROUTE COMPLETE. HOOKING GATEWAY LINK..."
-    ]);
-}
-
-function runOptimiser() {
-    runLogStream([
-        "STAGING REGISTRY OPTIMIZATION FOR COMPATIBLE MOUSE DRIVERS...",
-        "INJECTING AUTO-HEADSHOT X/Y MOUSE SENSITIVITY CONSTANTS...",
-        "DETERMINING SYSTEM DPI RATIO VECTOR CORRECTIONS...",
-        "STAGING TERMINAL ROUTE COMPLETE. HOOKING GATEWAY LINK..."
-    ]);
+    setTimeout(() => {
+        feed.innerHTML = "SUCCESS: Opening secure file node mirror gateway.";
+    }, 950);
 }

@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none !important; /* Disables standard cursor for premium vector tracking */
+    cursor: none !important; /* Hides traditional mouse to bind the custom premium aura pointer */
 }
 
 body {
@@ -50,7 +50,7 @@ body {
     pointer-events: none;
 }
 
-/* Premium Aura Cursor Elements */
+/* Premium Aura Tracking Ring Components */
 .custom-cursor-dot {
     width: 6px;
     height: 6px;
@@ -75,10 +75,10 @@ body {
     transition: transform 0.1s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
 }
 
-/* Header Content Layout */
+/* Header Content Layout styles */
 header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
     animation: luxuryFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ header {
     line-height: 1.6;
 }
 
-/* Premium Discord Component Layout */
+/* Discord Custom Link Integration Button */
 .discord-link-wrapper {
     text-decoration: none;
     display: inline-block;
@@ -180,21 +180,20 @@ header {
 
 .discord-btn:hover::after { left: 100%; }
 
-/* Tactical Card Setup with Glow Trailing borders */
+/* Layout Grid Container */
 .container {
     display: flex;
-    gap: 4rem;
     max-width: 1200px;
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
+/* Centered Sensi Card Layout Frame */
 .premium-card {
     background: linear-gradient(145deg, rgba(5, 20, 11, 0.5), rgba(2, 8, 4, 0.8));
     border-radius: 20px;
-    width: 440px;
+    width: 460px;
     position: relative;
     padding: 1px;
     overflow: hidden;
@@ -232,23 +231,14 @@ header {
 
 .icon-wrapper {
     font-size: 3rem;
-    color: var(--deep-emerald);
     width: 80px;
     height: 80px;
-    background: rgba(0, 160, 48, 0.04);
-    border: 1px solid rgba(0, 160, 48, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.premium-card:hover .icon-wrapper {
-    transform: scale(1.05);
-    border-color: var(--deep-emerald);
-    box-shadow: 0 0 25px rgba(0, 160, 48, 0.25);
 }
 
 .bright-green-theme {
@@ -262,7 +252,7 @@ header {
 }
 
 .premium-card h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 1rem;
@@ -271,12 +261,11 @@ header {
 .divider {
     width: 40px;
     height: 2px;
-    background: var(--deep-emerald);
+    background: var(--aura-green);
     margin-bottom: 1.5rem;
     transition: width 0.4s ease;
 }
-.premium-card:hover .divider { width: 80px; }
-.premium-card:hover .bright-green-theme + h2 + .divider { background: var(--aura-green); }
+.premium-card:hover .divider { width: 90px; }
 
 .premium-card p {
     color: var(--text-muted);
@@ -284,10 +273,9 @@ header {
     line-height: 1.7;
     text-align: center;
     margin-bottom: 3rem;
-    height: 80px;
 }
 
-/* Interactive Gaming Utility Buttons */
+/* Action Button Mechanics */
 .premium-link { text-decoration: none; width: 100%; display: block; }
 
 .premium-btn {
@@ -317,25 +305,18 @@ header {
     transition: 0.5s;
 }
 
-.premium-btn:hover {
-    border-color: var(--deep-emerald);
-    background: rgba(0, 160, 48, 0.08);
-    box-shadow: 0 0 20px rgba(0, 160, 48, 0.15);
-    text-shadow: 0 0 8px #fff;
-}
-
-.premium-btn:hover::after { left: 100%; }
-
 .aura-btn:hover {
     border-color: var(--aura-green);
     background: rgba(57, 255, 20, 0.08);
     box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+    text-shadow: 0 0 8px #fff;
 }
+.aura-btn:hover::after { left: 100%; }
 
-/* Tactical Execution Status Terminal Layout */
+/* Enterprise Requisition Layout (Contact Panel) */
 .console-frame {
     width: 100%;
-    max-width: 920px;
+    max-width: 820px;
     background: rgba(2, 8, 4, 0.9);
     border: 1px solid rgba(57, 255, 20, 0.05);
     border-radius: 12px;
@@ -365,12 +346,56 @@ header {
 }
 
 .console-viewport {
-    padding: 1.8rem 2rem;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-pitch {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-pitch .highlight {
+    color: var(--aura-green);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.contact-channels {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.channel-tag {
+    background: rgba(5, 20, 11, 0.6);
+    border: 1px solid rgba(57, 255, 20, 0.15);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
     font-family: var(--font-mono);
+    font-size: 0.85rem;
     color: #cbfad4;
-    font-size: 0.9rem;
-    min-height: 120px;
-    line-height: 1.7;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.channel-tag i {
+    color: var(--aura-green);
+}
+
+.console-feed {
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 1rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
 }
 
 /* Animations */

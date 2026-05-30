@@ -6,7 +6,7 @@
 
 An ultra-premium, low-latency distribution portal delivering high-performance `.reg` registry sensitivity profiles and tracking configurations optimized specifically for competitive Free Fire emulator deployment.
 
-🌐 **Live Portal Link:** [pixelcorp-dev.github.io/pc-opt ↗](https://pixelcorp-dev.github.io/pc-opt/)
+🌐 **Live Portal Link:** [pixelcorp-dev.github.io/pc-opt ↗](https://pixelcorp-dev.github.io/pixel.sensi-pack/)
 
 ---
 
